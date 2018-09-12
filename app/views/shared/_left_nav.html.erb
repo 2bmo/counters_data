@@ -1,0 +1,26 @@
+<div>
+  <% if customer_signed_in? %>
+    <nav>
+      <ul>
+        <li><%= link_to 'внести данные',  %></li>
+        <li><%= link_to 'Статистика',  %></li>
+        <li><%= link_to 'Настройки',  %></li>
+      </ul>
+    </nav>
+  <% end %>
+
+  <% if admin_signed_in? %>
+    <nav>
+      <ul>
+        <li><%= link_to 'Администраторы',  %></li>
+        <li><%= link_to 'Пользователи',  %></li>
+        <li><%= link_to 'Статистика',  %></li>
+        <li><%= link_to 'Настройки',  %></li>
+      </ul>
+    </nav>
+  <% end %>
+</div>
+
+
+
+

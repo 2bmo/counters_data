@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+<h1>Admin dashboard</h1>
+<h1>Настройки</h1>
+<table>
+  <tbody>
+  <tr>
+    <td>Логин</td>
+    <td>hgfh</td>
+  </tr>
+  <tr>
+    <td>Пароль</td>
+    <td>123456</td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  <%= link_to "Редактировать", "/admins/:id/edit(.:format)" %>
+</div>
+<%= render "shared/footer" %>
