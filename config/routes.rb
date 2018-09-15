@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   devise_for :customers, path: 'customers', controllers: {
       sessions: "customers/sessions",
+      registrations: "customers/registrations",
       confirmations: "customers/confirmations",
       passwords: "customers/passwords",
       unlocks: "customers/unlocks"
@@ -18,9 +19,11 @@ Rails.application.routes.draw do
 
   devise_for :admins, path: 'admins', controllers: {
       sessions: "admins/sessions",
+      registrations: "admins/registrations",
       confirmations: "admins/confirmations",
       passwords: "admins/passwords",
-      unlocks: "admins/unlocks"
+      unlocks: "admins/unlocks",
   }
+
 
 end

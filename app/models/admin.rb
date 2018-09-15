@@ -5,5 +5,14 @@ class Admin < ApplicationRecord
          :recoverable,
          :rememberable,
          :trackable,
-         :validatable
+         :validatable,
+         :registerable
+
+  validates :login, uniqueness: true
+  validates :email, uniqueness: true
+
+  def will_save_change_to_email?
+    false
+  end
+
 end
