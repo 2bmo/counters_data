@@ -1,0 +1,36 @@
+@import "base";
+
+body {
+  @extend .margin0;
+  font-size: $font-size;
+  color: $dark_grey;
+  background: $white;
+}
+main {
+  padding: 20px 1.2em;
+  min-height: calc(100vh - 140px);
+}
+h1, h2, h3, h4, h5, h6 {
+  @extend .margin0;
+  @extend .text_center;
+}
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.4em;
+}
+h4 {
+  font-size: 1.2em;
+}
+h5, h6 {
+  font-size: 1em;
+}
+a {
+  @extend .text_no-decoration;
+  color: inherit;
+  @extend .pointer;
+}

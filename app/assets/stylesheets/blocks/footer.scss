@@ -1,0 +1,15 @@
+@import "../common/base";
+
+$height: 40px;
+
+$logo__height: 40px;
+$logo__width: 40px;
+$logo__img: '../../app/assets/images/favicon.svg';
+
+
+.footer {
+  @extend .text_center;
+  line-height: $height;
+  color: $white;
+  background: $blue;
+}

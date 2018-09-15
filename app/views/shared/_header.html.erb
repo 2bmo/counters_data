@@ -1,5 +1,8 @@
 <header class="header">
-  <div class="header__logo"></div>
+  <div>
+    <a class="header__logo" href="#"></a>
+    Данные счётчиков
+  </div>
   <div class="header__link">
     <% if customer_signed_in? %>
       <%= link_to 'Выйти', destroy_customer_session_path, :method => :delete %>

@@ -1,18 +1,20 @@
 <%= render "shared/header" %>
-<h1>Admin dashboard</h1>
-<table>
-  <tbody>
-  <tr>
-    <td>Логин</td>
-    <td>hgfh</td>
-  </tr>
-  <tr>
-    <td>Пароль</td>
-    <td>123456</td>
-  </tr>
-  </tbody>
-</table>
-<div>
-  <%= link_to "Редактировать", "/admins/:id/edit" %>
-</div>
+<main>
+  <h1>Admin dashboard</h1>
+  <table>
+    <tbody>
+    <tr>
+      <td>Логин</td>
+      <td>hgfh</td>
+    </tr>
+    <tr>
+      <td>Пароль</td>
+      <td>123456</td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <%= link_to "Редактировать", "/admins/:id/edit" %>
+  </div>
+</main>
 <%= render "shared/footer" %>

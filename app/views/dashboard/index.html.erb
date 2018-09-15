@@ -1,7 +1,12 @@
 <%= render "shared/header" %>
-<main>
-  <div><%= link_to "Войти", "/customers/sign_in" %></div>
-  <div><%= link_to "Админ", "/admins/sign_in" %></div>
+<main class="index">
+  <div>
+    <h1>Пожалуйста, войдите в аккаунт</h1>
+    <div class="index__form">
+      <div><%= link_to "Клиент", "/customers/sign_in", :class => "index__button" %></div>
+      <div><%= link_to "Админ", "/admins/sign_in", :class => "index__button" %></div>
+    </div>
+  </div>
 </main>
 <%= render "shared/footer" %>
 

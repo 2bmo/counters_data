@@ -1,0 +1,29 @@
+@import "../common/base";
+
+$button__width: 8em;
+$button__height: 4em;
+$button__border-radius: 8px;
+
+.index {
+  @extend .flex;
+  @extend .flex_justify__around;
+  @extend .flex_align__center;
+
+  &__form {
+    @extend .center;
+    @extend .flex-wrap;
+  }
+
+  &__button {
+    @extend .center;
+    margin: 1em;
+    width: $button__width;
+    height: $button__height;
+    background: $light_blue;
+    border-radius: $button__border-radius;
+    &:hover {
+      color: $white;
+      background: $dark_blue;
+    }
+  }
+}
