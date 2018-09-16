@@ -8,8 +8,9 @@ application up and running.
     * Rails 5.2.1
 
 2. System dependencies
-    * Devise 4.4.0
-    * Rails real favicon https://github.com/RealFaviconGenerator/rails_real_favicon
+    * Devise 4.4.0 (https://github.com/plataformatec/devise/blob/master/README.md)
+    * jquery-rails (https://github.com/rails/jquery-rails/blob/master/README.md)
+    * RailsRealFavicon (https://github.com/RealFaviconGenerator/rails_real_favicon/blob/master/README.rdoc)
 
 3. Configuration
 

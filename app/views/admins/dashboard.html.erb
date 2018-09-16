@@ -1,20 +1,17 @@
 <%= render "shared/header" %>
-<main>
-  <h1>Admin dashboard</h1>
-  <table>
-    <tbody>
-    <tr>
-      <td>Логин</td>
-      <td>hgfh</td>
-    </tr>
-    <tr>
-      <td>Пароль</td>
-      <td>123456</td>
-    </tr>
-    </tbody>
-  </table>
-  <div>
-    <%= link_to "Редактировать", "/admins/:id/edit" %>
+<main class="dashboard">
+  <%= render "admins/shared/menu" %>
+  <div class="content">
+    <h1>Статистика</h1>
+    <h5>Наибольшие потребители воды</h5>
+    <div class="tabs">
+      <ul class="tabs__menu">
+        <li class="tabs__link" id="cold-water-toggle">Холодная вода</li>
+        <li class="tabs__link" id="hot-water-toggle">Горячая вода</li>
+      </ul>
+      <div class="tabs__content" id="cold-water-tab"></div>
+      <div class="tabs__content" id="hot-water-tab"></div>
+    </div>
   </div>
 </main>
 <%= render "shared/footer" %>

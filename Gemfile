@@ -51,6 +51,7 @@ group :development do
   # Custom gems
   gem 'devise', '~> 4.4.0'
   gem 'rails_real_favicon'
+  gem 'jquery-rails'
 end
 
 group :test do

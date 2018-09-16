@@ -7,7 +7,7 @@ body {
   background: $white;
 }
 main {
-  padding: 20px 1.2em;
+  padding: 20px .8em;
   min-height: calc(100vh - 140px);
 }
 h1, h2, h3, h4, h5, h6 {
@@ -28,6 +28,11 @@ h4 {
 }
 h5, h6 {
   font-size: 1em;
+}
+ul {
+  @extend .margin0;
+  @extend .padding0;
+  list-style: none;
 }
 a {
   @extend .text_no-decoration;

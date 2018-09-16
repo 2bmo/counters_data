@@ -1,0 +1,18 @@
+@import "../common/base";
+
+.menu {
+  &__link  {
+    &_active {
+      color: $blue;
+      &:before {
+        content: '- '
+      }
+      &:hover {
+        color: $dark_blue;
+      }
+    }
+    &:hover {
+      color: $dark_blue;
+    }
+  }
+}

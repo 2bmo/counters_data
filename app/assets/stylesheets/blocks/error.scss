@@ -1,0 +1,19 @@
+@import "../common/base";
+
+$margin: 1em 0;
+$padding: .4em .1em;
+$border-radius: 6px;
+
+#error_explanation {
+  @extend .text_center;
+  margin: $margin;
+  padding: $padding;
+  color: $white;
+  background: $dark_blue;
+  border-radius: $border-radius;
+
+  h2 {
+    font-size: 1em;
+  }
+}
+

@@ -2,8 +2,6 @@
 
 class Admins::RegistrationsController < Devise::RegistrationsController
 
-  respond_to :html, :xml, :json
-
   include Accessible
   skip_before_action :check_user, except: [:new, :create, :update, :destroy, :cancel, :edit]
 
@@ -48,17 +46,17 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:login, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:login, :email, :password, :password_confirmation])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:login, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:login, :email, :password, :password_confirmation])
   end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
-  #   super(resource)
+  #   redirect_to(admin_root_path)
   # end
 
   # The path used after sign up for inactive accounts.

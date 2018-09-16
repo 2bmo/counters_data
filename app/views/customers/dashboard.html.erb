@@ -1,2 +1,16 @@
-<h1>Customer dashboard</h1>
-<p>Find me in app/views/customers/profile.html.erb</p>
+<%= render "shared/header" %>
+<main class="dashboard">
+  <%= render "customers/shared/menu" %>
+  <div class="content">
+    <h1>Внести данные</h1>
+    <div class="tabs">
+      <ul class="tabs__menu">
+        <li class="tabs__link" id="cold-water-toggle">Холодная вода</li>
+        <li class="tabs__link" id="hot-water-toggle">Горячая вода</li>
+      </ul>
+      <div class="tabs__content" id="cold-water-tab"></div>
+      <div class="tabs__content" id="hot-water-tab"></div>
+    </div>
+  </div>
+</main>
+<%= render "shared/footer" %>

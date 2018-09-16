@@ -37,15 +37,24 @@
 }
 
 
+/*   PADDING   */
+.padding0 {
+  padding: 0;
+}
+
+
 /*   TEXT   */
 .text_center {
   text-align: center;
 }
+.vert-align_middle {
+  vertical-align: middle;
+}
 .text_no-decoration {
   text-decoration: none;
 }
-.vert-align_middle {
-  vertical-align: middle;
+.text_underline {
+  text-decoration: underline;
 }
 
 

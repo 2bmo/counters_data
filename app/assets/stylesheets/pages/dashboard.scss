@@ -1,0 +1,21 @@
+@import "../common/base";
+
+$left-col__width: 18%;
+$left-col__min-width: 100px;
+$right-col__padding: 12px;
+$right-col__width: calc(#{82%} - #{$right-col__padding});;
+
+.dashboard {
+  @extend .flex;
+
+  .menu {
+    width: $left-col__width;
+    min-width: $left-col__min-width;
+  }
+
+  .content {
+    padding: $right-col__padding;
+    width: $right-col__width;
+    border-left: 1px solid $light_blue;
+  }
+}

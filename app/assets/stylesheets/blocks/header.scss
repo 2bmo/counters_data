@@ -27,4 +27,9 @@ $logo__img: '../../app/assets/images/favicon.svg';
   &__logo, &__link {
     @extend .in-block;
   }
+  &__link {
+    &:hover {
+      @extend .text_underline;
+    }
+  }
 }
