@@ -1,4 +1,7 @@
 class CustomersController < ApplicationController
-  def profile
+  def new
+    @customer = Customer.new(
+      id: current_customer.id
+    )
   end
 end

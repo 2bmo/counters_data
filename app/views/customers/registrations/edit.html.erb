@@ -2,69 +2,73 @@
 <main class="dashboard">
   <%= render "customers/shared/menu" %>
   <div class="content">
-    <h2>Редактировать данные профиля</h2>
+    <section>
+      <h2>Редактировать данные профиля</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form" }) do |f| %>
+        <%= devise_error_messages! %>
 
-      <div class="field">
-        <%= f.label :first_name, "Имя" %><br />
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", required: true %>
-      </div>
+        <div>
+          <%= f.label :first_name, "Имя", class: "form__label" %>
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", required: true, class: "form__input" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :last_name, "Фамилия" %><br />
-        <%= f.text_field :last_name, autocomplete: "last_name", required: true %>
-      </div>
+        <div>
+          <%= f.label :last_name, "Фамилия", class: "form__label" %>
+          <%= f.text_field :last_name, autocomplete: "last_name", required: true, class: "form__input" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :address, "Адрес" %><br />
-        <%= f.text_field :address, autocomplete: "address", required: true %>
-      </div>
+        <div>
+          <%= f.label :address, "Адрес", class: "form__label" %>
+          <%= f.text_field :address, autocomplete: "address", required: true, class: "form__input" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :login, "Логин" %><br />
-        <%= f.text_field :login, autocomplete: "login", required: true %>
-      </div>
+        <div>
+          <%= f.label :login, "Логин", class: "form__label" %>
+          <%= f.text_field :login, autocomplete: "login", required: true, class: "form__input" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email,autocomplete: "email", required: true %>
-      </div>
+        <div>
+          <%= f.label :email, class: "form__label" %>
+          <%= f.email_field :email, autocomplete: "email", required: true, class: "form__input" %>
+        </div>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-
-      <div class="field">
-        <%= f.label :password, "Новый пароль" %> <i>(Оставьте пустым если не хотите изменить)</i><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-        <% if @minimum_password_length %>
-          <br />
-          <em><%= @minimum_password_length %> знаков минимум</em>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Требуется подтверждение почты: <%= resource.unconfirmed_email %></div>
         <% end %>
-      </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation, "Подтвердите пароль" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
+        <div>
+          <%= f.label :password, "Новый пароль", class: "form__label" %> <i>(Оставьте пустым если не хотите изменить)</i>
+          <%= f.password_field :password, autocomplete: "off", class: "form__input" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> знаков минимум</em>
+          <% end %>
+        </div>
 
-      <div class="field">
-        <%= f.label :current_password, "Текущий пароль" %> <i>(Чтобы сохранить изменения требуется текущий пароль)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off" %>
-      </div>
+        <div>
+          <%= f.label :password_confirmation, "Подтвердите пароль", class: "form__label" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form__input" %>
+        </div>
 
-      <div class="actions">
-        <%= f.submit "Обновить" %>
-      </div>
-    <% end %>
+        <div>
+          <%= f.label :current_password, "Текущий пароль", class: "form__label" %> <i>(Чтобы сохранить изменения требуется текущий пароль)</i>
+          <%= f.password_field :current_password, autocomplete: "off", class: "form__input" %>
+        </div>
 
-    <h3>Удалить аккаунт</h3>
+        <div>
+          <%= f.submit "Обновить", class: "form__button" %>
+        </div>
+      <% end %>
+    </section>
 
-    <p>Удалить пользователя и все связанные данные счётчиков? <%= button_to "Удалить безвозвратно", registration_path(resource_name), data: { confirm: "Удалить?" }, method: :delete %></p>
+    <section class="form">
+      <h2>Удалить аккаунт</h2>
 
-    <%= link_to "Назад", customer_root_path %>
+      <p>Удалить пользователя и все связанные данные счётчиков? <%= button_to "Удалить безвозвратно", registration_path(resource_name), data: { confirm: "Удалить?" }, method: :delete, class: "form__button" %></p>
+
+      <%= link_to "Назад", customer_root_path, class: "form__button" %>
+    </section>
   </div>
 </main>
 <%= render "shared/footer" %>

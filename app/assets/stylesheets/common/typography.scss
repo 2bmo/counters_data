@@ -1,8 +1,14 @@
-@import "base";
+@import "colors";
+
+$font-size: 14px;
+$font-family: "Comfortaa", cursive;
+
+body, ul {
+  margin: 0;
+}
 
 body {
-  @extend .margin0;
-  font-size: $font-size;
+  font: normal $font-size $font-family;
   color: $dark_grey;
   background: $white;
 }
@@ -11,8 +17,8 @@ main {
   min-height: calc(100vh - 140px);
 }
 h1, h2, h3, h4, h5, h6 {
-  @extend .margin0;
-  @extend .text_center;
+  margin: 0 0 1em;
+  text-align: center;
 }
 h1 {
   font-size: 1.8em;
@@ -30,12 +36,21 @@ h5, h6 {
   font-size: 1em;
 }
 ul {
-  @extend .margin0;
-  @extend .padding0;
+  padding: 0;
   list-style: none;
 }
 a {
-  @extend .text_no-decoration;
+  text-decoration: none;
   color: inherit;
-  @extend .pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+a, button, input[type="submit"] {
+  cursor: pointer;
+}
+input, button {
+  &:focus {
+    outline: none;
+  }
 }

@@ -14,6 +14,13 @@ Rails.application.routes.draw do
       unlocks: "customers/unlocks"
   }
 
+  scope "/customers" do
+    resources :customers do
+        resources :cold
+    end
+  end
+
+
 
   get 'admins/dashboard', as: 'admin_root'
 

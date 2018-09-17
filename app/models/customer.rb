@@ -8,6 +8,8 @@ class Customer < ApplicationRecord
          :validatable,
          :registerable
 
+  has_many :colds
+
   validates :login, uniqueness: true
   validates :email, uniqueness: true
 

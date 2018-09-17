@@ -1,13 +1,13 @@
-@import "../common/base";
+@import "../common/colors";
 
 $margin: 1em 0;
 $padding: .4em .1em;
 $border-radius: 6px;
 
-#error_explanation {
-  @extend .text_center;
+#error_explanation, .field_with_errors {
   margin: $margin;
   padding: $padding;
+  text-align: center;
   color: $white;
   background: $dark_blue;
   border-radius: $border-radius;

@@ -1,35 +1,30 @@
-@import "../common/base";
+@import "../common/colors";
 
 $padding: 1.2em;
 $height: 60px;
 
-$logo__height: 40px;
-$logo__width: 40px;
-$logo__img: '../../app/assets/images/favicon.svg';
+$logo__height: 32px;
+$logo__width: 32px;
+$logo__img: '../favicon.svg';
 
 
 .header {
-  @extend .flex;
-  @extend .flex_justify__between;
-  @extend .flex_align__center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 $padding;
   height: $height;
   color: $white;
   background: $blue;
   &__logo {
-    @extend .vert-align_middle;
     margin-right: 10px;
     width: $logo__width;
     height: $logo__height;
+    vertical-align: middle;
     background: url($logo__img) no-repeat center;
     background-size: cover;
   }
   &__logo, &__link {
-    @extend .in-block;
-  }
-  &__link {
-    &:hover {
-      @extend .text_underline;
-    }
+    display: inline-block;
   }
 }

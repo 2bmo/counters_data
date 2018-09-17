@@ -1,0 +1,2 @@
+module ColdsHelper
+end

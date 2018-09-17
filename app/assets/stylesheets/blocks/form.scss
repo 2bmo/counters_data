@@ -1,0 +1,76 @@
+@import "../common/colors";
+
+$label__margin: .3em;
+
+$input__margin: 1.2em;
+$input__padding: .4em;
+$input__max-width: 400px;
+
+$button__border-radius: 4px;
+
+$checkbox__side: 1.5em;
+
+.form {
+
+  &__input, &__button {
+    margin-bottom: $input__margin;
+  }
+  &__input, &__button {
+    font: inherit;
+    border: none;
+  }
+  &__label {
+    margin-bottom: $label__margin;
+    display: block;
+    color: $blue;
+    &_checkbox {
+      display: inline-block;
+      margin-bottom: $input__margin;
+    }
+  }
+  &__input {
+    padding: $input__padding;
+    width: 100%;
+    max-width: $input__max-width;
+    border-bottom: 1px solid $light_blue;
+  }
+  &__button {
+    padding: $input__padding;
+    color: $white;
+    background: $blue;
+    border-radius: $button__border-radius;
+    &:hover {
+      background: $dark_blue;
+    }
+  }
+  &__checkbox {
+    display: none;
+    &:checked + .form__checkmark {
+      color: $blue;
+      background: $blue;
+      &:after {
+        display: inline;
+      }
+    }
+  }
+  &__checkmark {
+    display: inline-block;
+    margin-right: $label__margin;
+    width: $checkbox__side;
+    height: $checkbox__side;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    color: $white;
+    border: 1px solid $blue;
+    border-radius: $button__border-radius;
+    cursor: pointer;
+    &:after {
+      display: none;
+      content: '\2713';
+      color: $white;
+    }
+  }
+
+
+}

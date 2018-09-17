@@ -1,4 +1,4 @@
-@import "../common/base";
+@import "../common/colors";
 
 $height: 40px;
 
@@ -8,7 +8,7 @@ $logo__img: '../../app/assets/images/favicon.svg';
 
 
 .footer {
-  @extend .text_center;
+  text-align: center;
   line-height: $height;
   color: $white;
   background: $blue;
