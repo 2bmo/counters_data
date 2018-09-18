@@ -12,7 +12,7 @@
         </tr>
         </thead>
         <tbody>
-        <% @admins = Admin.all %>
+        <% @admins = Admin.order(:login).all %>
         <% @admins.each do |admin| %>
           <tr>
             <td class="table__td"><%= admin.login %></td>

@@ -14,19 +14,20 @@
         <table class="table">
           <thead>
             <tr>
-              <th class="table__th">Пользователь</th>
+              <th class="table__th">Фамилия</th>
+              <th class="table__th">Имя</th>
               <th class="table__th">Значение</th>
             </tr>
           </thead>
           <tbody>
+          <% @customers = Customer.order(last_name: :desc).limit(3) %>
+          <% @customers.each do |customer| %>
             <tr>
-              <td class="table__td">екуе</td>
-              <td class="table__td">12345678</td>
+              <td class="table__td"><%= customer.last_name %></td>
+              <td class="table__td"><%= customer.first_name %></td>
+              <td class="table__td"></td>
             </tr>
-            <tr>
-              <td class="table__td">01-01-2000</td>
-              <td class="table__td">12345678</td>
-            </tr>
+          <% end %>
           </tbody>
         </table>
       </div>
@@ -34,19 +35,20 @@
         <table class="table">
           <thead>
           <tr>
-            <th class="table__th">Пользователь</th>
+            <th class="table__th">Фамилия</th>
+            <th class="table__th">Имя</th>
             <th class="table__th">Значение</th>
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td class="table__td">екуе</td>
-            <td class="table__td">12345678</td>
-          </tr>
-          <tr>
-            <td class="table__td">01-01-2000</td>
-            <td class="table__td">12345678</td>
-          </tr>
+          <% @customers = Customer.order(last_name: :desc).limit(3) %>
+          <% @customers.each do |customer| %>
+            <tr>
+              <td class="table__td"><%= customer.last_name %></td>
+              <td class="table__td"><%= customer.first_name %></td>
+              <td class="table__td"></td>
+            </tr>
+          <% end %>
           </tbody>
         </table>
       </div>

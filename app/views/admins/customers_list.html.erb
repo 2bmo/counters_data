@@ -15,11 +15,11 @@
         </tr>
         </thead>
         <tbody>
-        <% @customers = Customer.all %>
+        <% @customers = Customer.order(:last_name).all %>
         <% @customers.each do |customer| %>
           <tr>
-            <td class="table__td"><%= customer.first_name %></td>
             <td class="table__td"><%= customer.last_name %></td>
+            <td class="table__td"><%= customer.first_name %></td>
             <td class="table__td"><%= customer.address %></td>
             <td class="table__td"><%= customer.login %></td>
             <td class="table__td"><%= customer.email %></td>
