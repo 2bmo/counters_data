@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'customers/dashboard', as: 'customer_root'
 
-  devise_for :customers, path: 'customers', controllers: {
+  devise_for :customers, path: 'customers', :path_prefix => 'd', controllers: {
       sessions: "customers/sessions",
       registrations: "customers/registrations",
       confirmations: "customers/confirmations",
@@ -15,11 +15,9 @@ Rails.application.routes.draw do
       unlocks: "customers/unlocks"
   }
 
-  scope "/customers" do
-    resources :customers do
-        resources :cold
-    end
-  end
+  match '/customers/:id',     to: 'customers#show',       via: 'get'
+
+  resources :customers, :only =>[:show]
 
 
 

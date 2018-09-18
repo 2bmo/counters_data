@@ -1,29 +1,27 @@
-<% if admin_signed_in? %>
-  <%= render "shared/header" %>
-  <main class="dashboard">
-    <%= render "admins/shared/menu" %>
-    <div class="content">
-      <h1>Список администраторов</h1>
-      <table class="table">
-        <thead>
+<%= render "shared/header" %>
+<main class="dashboard">
+  <%= render "admins/shared/menu" %>
+  <div class="content">
+    <h1>Список администраторов</h1>
+    <table class="table">
+      <thead>
+      <tr>
+        <th class="table__th">ID</th>
+        <th class="table__th">Логин</th>
+        <th class="table__th">Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @admins = Admin.order(:login).all %>
+      <% @admins.each do |admin| %>
         <tr>
-          <th class="table__th">Логин</th>
-          <th class="table__th">Email</th>
+          <td class="table__td"><%= admin.id %></td>
+          <td class="table__td"><%= admin.login %></td>
+          <td class="table__td"><%= admin.email %></td>
         </tr>
-        </thead>
-        <tbody>
-        <% @admins = Admin.order(:login).all %>
-        <% @admins.each do |admin| %>
-          <tr>
-            <td class="table__td"><%= admin.login %></td>
-            <td class="table__td"><%= admin.email %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-  </main>
-  <%= render "shared/footer" %>
-<% else %>
-  <script> window.location.href="/admins/sign_in" </script>
-<% end %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</main>
+<%= render "shared/footer" %>

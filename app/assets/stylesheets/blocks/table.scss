@@ -3,6 +3,7 @@
 $table__cell_padding: .6em;
 
 .table {
+  margin-bottom: $padding_top-bottom;
   width: 100%;
   border-collapse: collapse;
   &__th, &__td {

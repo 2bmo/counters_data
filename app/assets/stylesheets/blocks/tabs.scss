@@ -1,13 +1,12 @@
 @import "../common/variables";
 
-$tabs__menu_margin: 1em;
 $tabs__link_margin: 2px;
 $tabs__link_padding: 1em;
 $tabs__link_border-radius: .3em;
 
 .tabs {
   &__menu {
-    margin-bottom: $tabs__menu_margin;
+    margin-bottom: $padding_top-bottom;
     color: $blue;
     border-bottom: 1px solid;
   }

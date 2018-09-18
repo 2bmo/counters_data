@@ -1,7 +1,5 @@
 class CustomersController < ApplicationController
-  def new
-    @customer = Customer.new(
-      id: current_customer.id
-    )
+  def show
+    @customer = Customer.find_by_id(params[:id])
   end
 end

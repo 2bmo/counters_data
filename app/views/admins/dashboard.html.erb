@@ -1,4 +1,3 @@
-<% if admin_signed_in? %>
 <%= render "shared/header" %>
 <main class="dashboard">
   <%= render "admins/shared/menu" %>
@@ -56,6 +55,3 @@
   </div>
 </main>
 <%= render "shared/footer" %>
-<% else %>
-  <script> window.location.href="/admins/sign_in" </script>
-<% end %>

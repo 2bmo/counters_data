@@ -1,35 +1,33 @@
-<% if admin_signed_in? %>
-  <%= render "shared/header" %>
-  <main class="dashboard">
-    <%= render "admins/shared/menu" %>
-    <div class="content">
-      <h1>Список пользователей</h1>
-      <table class="table">
-        <thead>
+<%= render "shared/header" %>
+<main class="dashboard">
+  <%= render "admins/shared/menu" %>
+  <div class="content">
+    <h1>Список пользователей</h1>
+    <table class="table">
+      <thead>
+      <tr>
+        <th class="table__th">ID</th>
+        <th class="table__th">Фамилия</th>
+        <th class="table__th">Имя</th>
+        <th class="table__th">Адрес</th>
+        <th class="table__th">Логин</th>
+        <th class="table__th">Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @customers = Customer.order(:id).all %>
+      <% @customers.each do |customer| %>
         <tr>
-          <th class="table__th">Имя</th>
-          <th class="table__th">Фамилия</th>
-          <th class="table__th">Адрес</th>
-          <th class="table__th">Логин</th>
-          <th class="table__th">Email</th>
+          <td class="table__td"><%= customer.id %></td>
+          <td class="table__td"><%= link_to customer.last_name, customer_path(customer.id) %></td>
+          <td class="table__td"><%= customer.first_name %></td>
+          <td class="table__td"><%= customer.address %></td>
+          <td class="table__td"><%= customer.login %></td>
+          <td class="table__td"><%= customer.email %></td>
         </tr>
-        </thead>
-        <tbody>
-        <% @customers = Customer.order(:last_name).all %>
-        <% @customers.each do |customer| %>
-          <tr>
-            <td class="table__td"><%= customer.last_name %></td>
-            <td class="table__td"><%= customer.first_name %></td>
-            <td class="table__td"><%= customer.address %></td>
-            <td class="table__td"><%= customer.login %></td>
-            <td class="table__td"><%= customer.email %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-  </main>
-  <%= render "shared/footer" %>
-<% else %>
-  <script> window.location.href="/admins/sign_in" </script>
-<% end %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</main>
+<%= render "shared/footer" %>

@@ -1,24 +1,15 @@
-<% if customer_signed_in? %>
+<% if admin_signed_in? %>
 <%= render "shared/header" %>
 <main class="dashboard">
-  <%= render "customers/shared/menu" %>
+  <%= render "admins/shared/menu" %>
   <div class="content">
-    <h1>Внести данные</h1>
+    <h2><%= @customer.last_name %> <%= @customer.first_name %></h2>
     <div class="tabs">
       <ul class="tabs__menu">
         <li class="tabs__link tabs__link_active" id="cold-water-toggle">Холодная вода</li>
         <li class="tabs__link" id="hot-water-toggle">Горячая вода</li>
       </ul>
       <div class="tabs__content tabs__content_active" id="cold-water-tab">
-        <%= form_with :html => {:class => "form"} do |f| %>
-          <div>
-            <%= f.label :hot_water_data, "Данные счётчика холодной воды за текущий месяц", class: "form__label" %>
-            <%= f.number_field :hot_water_data, required: true, min: 00001, max: 99999999, class: "form__input" %>
-          </div>
-          <div class="actions">
-            <%= f.submit "Внести", class: "form__button" %>
-          </div>
-        <% end %>
         <table class="table">
           <thead>
           <tr>
@@ -39,15 +30,6 @@
         </table>
       </div>
       <div class="tabs__content" id="hot-water-tab">
-        <%= form_with :html => {:class => "form"} do |f| %>
-          <div>
-            <%= f.label :hot_water_data, "Данные счётчика горячей воды за текущий месяц", class: "form__label" %>
-            <%= f.number_field :hot_water_data, required: true, min: 00001, max: 99999999, class: "form__input" %>
-          </div>
-          <div class="actions">
-            <%= f.submit "Внести", class: "form__button" %>
-          </div>
-        <% end %>
         <table class="table">
           <thead>
           <tr>
@@ -68,9 +50,12 @@
         </table>
       </div>
     </div>
+    <div class="form">
+      <%= link_to "Назад", "/admins/customers_list", class: "form__button" %>
+    </div>
   </div>
 </main>
 <%= render "shared/footer" %>
 <% else %>
-  <script> window.location.href="d/customers/sign_in" </script>
+  <script> window.location.href="/admins/sign_in" </script>
 <% end %>
