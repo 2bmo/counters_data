@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   match '/customers/:id', to: 'customers#show', via: 'get'
 
   resources :customers, :only =>[:show] do
-    resources :colds, only: [:index, :new, :create, :show]
+    resources :colds, only: [:new, :create]
   end
 
 

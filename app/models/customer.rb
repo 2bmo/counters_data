@@ -6,7 +6,8 @@ class Customer < ApplicationRecord
          :rememberable,
          :trackable,
          :validatable,
-         :registerable
+         :registerable,
+         :confirmable
 
   has_many :colds
 

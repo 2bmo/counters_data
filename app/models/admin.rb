@@ -5,8 +5,8 @@ class Admin < ApplicationRecord
          :recoverable,
          :rememberable,
          :trackable,
-         :validatable,
-         :registerable
+         :registerable,
+         :confirmable
 
   validates :login, uniqueness: true
   validates :email, uniqueness: true
