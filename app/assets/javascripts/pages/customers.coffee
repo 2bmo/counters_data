@@ -1,4 +1,4 @@
-$(window).ready ->
+$(document).on 'turbolinks:load', ->
 
   # set password value
   firstName = $('#customer_first_name')
@@ -8,7 +8,6 @@ $(window).ready ->
   lastName.change -> setPass()
 
   setPass = ->
-    console.log(passwordVal)
     password = $('#customer_password')
     passwordConfirm = $('#customer_password_confirmation')
     passwordVal = firstName.val() + lastName.val()

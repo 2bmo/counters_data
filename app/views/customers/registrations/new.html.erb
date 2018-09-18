@@ -1,48 +1,48 @@
-<%=  render "shared/header" %>
 <% if admin_signed_in? %>
+<%=  render "shared/header" %>
 <main class="dashboard">
   <%= render "admins/shared/menu" %>
   <div class="content">
     <h2>Новый пользователь</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form"}) do |f| %>
       <%= devise_error_messages! %>
 
-      <div class="field">
-        <%= f.label :first_name, "Имя" %><br />
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", required: true %>
-      </div>
-
-      <div class="field">
-        <%= f.label :last_name, "Фамилия" %><br />
-        <%= f.text_field :last_name, autocomplete: "last_name", required: true %>
-      </div>
-
-      <div class="field">
-        <%= f.label :address, "Адрес" %><br />
-        <%= f.text_field :address, required: true %>
-      </div>
-
-      <div class="field">
-        <%= f.label :login, "Логин" %><br />
-        <%= f.text_field :login, required: true %>
-      </div>
-
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, required: true %>
+      <div>
+        <%= f.label :first_name, "Имя", class: "form__label" %>
+        <%= f.text_field :first_name, autofocus: true, required: true, class: "form__input" %>
       </div>
 
       <div>
-        <%= f.password_field :password, type: "hidden", label: "false" %>
+        <%= f.label :last_name, "Фамилия", class: "form__label" %>
+        <%= f.text_field :last_name, required: true, class: "form__input" %>
       </div>
 
       <div>
-        <%= f.password_field :password_confirmation, type: "hidden", label: "false" %>
+        <%= f.label :address, "Адрес", class: "form__label" %>
+        <%= f.text_field :address, required: true, class: "form__input" %>
+      </div>
+
+      <div>
+        <%= f.label :login, "Логин", class: "form__label" %>
+        <%= f.text_field :login, required: true, autocomplete: "off", class: "form__input" %>
+      </div>
+
+      <div>
+        <%= f.label :email, class: "form__label" %>
+        <%= f.email_field :email, required: true, class: "form__input" %>
+      </div>
+
+      <div>
+        <%= f.password_field :password, type: "hidden", label: "false", class: "form__input" %>
+      </div>
+
+      <div>
+        <%= f.password_field :password_confirmation, type: "hidden", label: "false", class: "form__input" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Создать" %>
+        <%= f.submit "Создать", class: "form__button" %>
       </div>
     <% end %>
     <%= render "customers/shared/links" %>

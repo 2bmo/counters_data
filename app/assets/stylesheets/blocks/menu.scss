@@ -1,6 +1,11 @@
-@import "../common/colors";
+@import "../common/variables";
+
+$menu__item_margin: 10px;
 
 .menu {
+  &__item {
+    margin-bottom: $menu__item_margin;
+  }
   &__link  {
     &_active {
       color: $blue;

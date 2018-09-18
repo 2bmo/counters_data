@@ -3,26 +3,27 @@
   <div>
     <h2>Авторизация администратора</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form"}) do |f| %>
       <div class="field">
-        <%= f.label :login, "Логин" %><br />
-        <%= f.text_field :login, autofocus: true, autocomplete: "login", required: true %>
+        <%= f.label :login, "Логин", class: "form__label" %>
+        <%= f.text_field :login, autofocus: true, autocomplete: "login", required: true, class: "form__input" %>
       </div>
 
       <div class="field">
-        <%= f.label :password, "Пароль" %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.label :password, "Пароль", class: "form__label" %>
+        <%= f.password_field :password, autocomplete: "off", class: "form__input" %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, "Запомнить?" %>
+        <div>
+          <%= f.check_box :remember_me, class: "form__checkbox" %>
+          <%= f.label :remember_me, ".", class: "form__checkmark" %>
+          <span class="form__label form__label_checkbox">Запомнить?</span>
         </div>
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Вход" %>
+        <%= f.submit "Вход", class: "form__button" %>
       </div>
     <% end %>
     <%= render "admins/shared/links" %>

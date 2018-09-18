@@ -1,9 +1,10 @@
-@import "../common/colors";
+@import "../common/variables";
 
 $label__margin: .3em;
 
 $input__margin: 1.2em;
-$input__padding: .4em;
+$input__padding: 10px;
+$input__width: calc(#{100%} - (#{$input__padding}*2));
 $input__max-width: 400px;
 
 $button__border-radius: 4px;
@@ -29,12 +30,14 @@ $checkbox__side: 1.5em;
     }
   }
   &__input {
+    display: block;
     padding: $input__padding;
-    width: 100%;
+    width: $input__width;
     max-width: $input__max-width;
     border-bottom: 1px solid $light_blue;
   }
   &__button {
+    display: inline-block;
     padding: $input__padding;
     color: $white;
     background: $blue;

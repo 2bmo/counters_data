@@ -1,22 +1,26 @@
-@import "../common/colors";
+@import "../common/variables";
 
-$col__padding: 12px;
+$col__padding: .7em;
+$col__padding_mobile: calc(#{$col__padding} - 2px);
 $left-col__width: 18%;
-$left-col__min-width: 100px;
+$left-col__min-width: 80px;
 $right-col__width: calc(#{82%} - #{$col__padding});
 
 .dashboard {
   display: flex;
 
   .menu {
-    padding: 0 $col__padding;
+    margin-right: $col__padding;
+    padding-right: $col__padding;
     width: $left-col__width;
     min-width: $left-col__min-width;
+    border-right: 1px solid $light_blue;
   }
 
   .content {
-    padding: $col__padding;
     width: $right-col__width;
-    border-left: 1px solid $light_blue;
+    @media all and (max-width: $mobile-device){
+      padding-left: $col__padding_mobile;
+    }
   }
 }

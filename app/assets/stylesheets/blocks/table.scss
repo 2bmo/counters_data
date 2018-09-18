@@ -1,0 +1,15 @@
+@import "../common/variables";
+
+$table__cell_padding: .6em;
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  &__th, &__td {
+    padding: $table__cell_padding;
+    border: 1px solid $light_blue;
+  }
+  &__th {
+    color: $blue;
+  }
+}

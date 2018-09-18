@@ -5,10 +5,10 @@
     <h1>Внести данные</h1>
     <div class="tabs">
       <ul class="tabs__menu">
-        <li class="tabs__link" id="cold-water-toggle">Холодная вода</li>
+        <li class="tabs__link tabs__link_active" id="cold-water-toggle">Холодная вода</li>
         <li class="tabs__link" id="hot-water-toggle">Горячая вода</li>
       </ul>
-      <div class="tabs__content" id="cold-water-tab">
+      <div class="tabs__content tabs__content_active" id="cold-water-tab">
         <%= form_with :html => {:class => "form"} do |f| %>
           <div>
             <%= f.label :hot_water_data, "Данные счётчика холодной воды за текущий месяц", class: "form__label" %>

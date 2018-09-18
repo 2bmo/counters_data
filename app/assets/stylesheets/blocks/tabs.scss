@@ -1,1 +1,49 @@
-@import "../common/colors";
+@import "../common/variables";
+
+$tabs__menu_margin: 1em;
+$tabs__link_margin: 2px;
+$tabs__link_padding: 1em;
+$tabs__link_border-radius: .3em;
+
+.tabs {
+  &__menu {
+    margin-bottom: $tabs__menu_margin;
+    color: $blue;
+    border-bottom: 1px solid;
+  }
+  &__link {
+    display: inline-block;
+    margin-right: $tabs__link_margin;
+    padding: $tabs__link_padding;
+    border: 1px solid;
+    border-bottom: none;
+    border-top-left-radius: $tabs__link_border-radius;
+    border-top-right-radius: $tabs__link_border-radius;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover, &_active {
+      color: $white;
+    }
+    &:hover {
+      background: $dark_blue;
+      border-color: $dark_blue;
+    }
+    &_active {
+      background: $blue;
+      border-color: $blue;
+    }
+    @media all and (max-width: $mobile-device){
+      display: block;
+      margin-right: 0;
+      border-radius: 0;
+    }
+  }
+  &__content {
+    display: none;
+    &_active {
+      display: block;
+    }
+  }
+}
