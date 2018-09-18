@@ -12,8 +12,8 @@
       <div class="tabs__content tabs__content_active" id="cold-water-tab">
         <%= form_with :html => {:class => "form"} do |f| %>
           <div>
-            <%= f.label :hot_water_data, "Данные счётчика холодной воды за текущий месяц", class: "form__label" %>
-            <%= f.number_field :hot_water_data, required: true, min: 00001, max: 99999999, class: "form__input" %>
+            <%= f.label :cold_water_data, "Данные счётчика холодной воды за текущий месяц", class: "form__label" %>
+            <%= f.number_field :cold_water_data, required: true, min: 00001, max: 99999999, class: "form__input" %>
           </div>
           <div class="actions">
             <%= f.submit "Внести", class: "form__button" %>
@@ -27,14 +27,13 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td class="table__td">01-01-2000</td>
-            <td class="table__td">12345678</td>
-          </tr>
-          <tr>
-            <td class="table__td">01-01-2000</td>
-            <td class="table__td">12345678</td>
-          </tr>
+          <% @colds = current_customer.colds %>
+          <% @colds.each do |cold_water| %>
+            <tr>
+              <td class="table__td"><%= cold_water.created_at %></td>
+              <td class="table__td"><%= cold_water.cold_water_data %></td>
+            </tr>
+          <% end %>
           </tbody>
         </table>
       </div>

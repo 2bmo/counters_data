@@ -15,9 +15,12 @@ Rails.application.routes.draw do
       unlocks: "customers/unlocks"
   }
 
-  match '/customers/:id',     to: 'customers#show',       via: 'get'
+  match '/customers/:id', to: 'customers#show', via: 'get'
 
-  resources :customers, :only =>[:show]
+  resources :customers, :only =>[:show] do
+    resources :colds, only: [:index, :new, :create, :show]
+  end
+
 
 
 

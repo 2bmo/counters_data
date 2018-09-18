@@ -1,8 +1,12 @@
 class ColdsController < ApplicationController
 
+  def new
+    @cold = current_customer.colds.new(params[:cold])
+  end
+
   def create
-    @customer = Customer.find(current_customer.id)
-    @cold = @customer.colds.create(cold_params)
+    @cold = current_customer.colds.new(params[:cold])
+    @cold.save
     redirect_to customer_root_path
   end
 
