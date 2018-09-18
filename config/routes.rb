@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'admins/list'
   get 'dashboard/index'
   root 'dashboard#index'
 
@@ -32,5 +33,7 @@ Rails.application.routes.draw do
       unlocks: "admins/unlocks",
   }
 
+  match '/admins/list',   to: 'admins#list',   via: 'get'
+  match '/admins/customers_list',   to: 'admins#customers_list',   via: 'get'
 
 end

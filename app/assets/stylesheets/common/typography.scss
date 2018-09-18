@@ -13,7 +13,7 @@ body {
   }
 }
 main {
-  padding: 20px .7em;
+  padding: $padding_top-bottom $padding_sides;
   min-height: calc(100vh - 140px);
 }
 h1, h2, h3, h4, h5, h6 {

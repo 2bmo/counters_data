@@ -1,9 +1,9 @@
 @import "../common/variables";
 
-$col__padding: .7em;
+$col__padding: .5em;
 $col__padding_mobile: calc(#{$col__padding} - 2px);
 $left-col__width: 18%;
-$left-col__min-width: 80px;
+$left-col__min-width: 100px;
 $right-col__width: calc(#{82%} - #{$col__padding});
 
 .dashboard {
@@ -15,12 +15,12 @@ $right-col__width: calc(#{82%} - #{$col__padding});
     width: $left-col__width;
     min-width: $left-col__min-width;
     border-right: 1px solid $light_blue;
+    @media all and (max-width: $mobile-device){
+      padding-right: $col__padding_mobile;
+    }
   }
 
   .content {
     width: $right-col__width;
-    @media all and (max-width: $mobile-device){
-      padding-left: $col__padding_mobile;
-    }
   }
 }
